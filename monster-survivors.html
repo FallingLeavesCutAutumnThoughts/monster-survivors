@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Monster Survivors - Play Free Online Survival Game | Devoya</title>
+    <meta name="title" content="Monster Survivors - Play Free Online Survival Game | Devoya">
+    <meta name="description" content="Play Monster Survivors online for free! Battle endless waves of monsters, collect power-ups, and survive as long as you can in this addictive roguelike survival game. No download required.">
+    <meta name="keywords" content="Monster Survivors, monster survival game, online survival game, roguelike game, free browser game, survival shooter, play online games">
+    <meta name="author" content="Devoya">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devoya.dev/monster-survivors">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devoya.dev/monster-survivors">
+    <meta property="og:title" content="Monster Survivors - Play Free Online Survival Game">
+    <meta property="og:description" content="Battle endless waves of monsters and survive as long as you can in this addictive roguelike survival game. Play now for free!">
+    <meta property="og:image" content="https://devoya.dev/images/monster-survivors-og.jpg">
+    <meta property="og:site_name" content="Devoya">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://devoya.dev/monster-survivors">
+    <meta property="twitter:title" content="Monster Survivors - Play Free Online Survival Game">
+    <meta property="twitter:description" content="Battle endless waves of monsters and survive as long as you can in this addictive roguelike survival game. Play now for free!">
+    <meta property="twitter:image" content="https://devoya.dev/images/monster-survivors-og.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            black: '#1d1d1f',
+                            gray: '#86868b',
+                            lightgray: '#f5f5f7',
+                            blue: '#0071e3',
+                            bluehover: '#0077ed',
+                            white: '#ffffff',
+                            border: '#d2d2d7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Schema.org Markup for Game -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Monster Survivors",
+        "description": "Battle endless waves of monsters, collect power-ups, and survive as long as you can in this addictive roguelike survival game.",
+        "genre": ["Survival", "Roguelike", "Action"],
+        "gamePlatform": "Web Browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Devoya",
+            "url": "https://devoya.dev"
+        },
+        "url": "https://devoya.dev/monster-survivors",
+        "playMode": "SinglePlayer",
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "value": 1
+        }
+    }
+    </script>
+    
+    <style>
+        /* Custom scrollbar for webkit browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #86868b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1d1d1f;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Game container aspect ratio */
+        .game-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            background: linear-gradient(135deg, #1d1d1f 0%, #2d2d2f 100%);
+        }
+        
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Fullscreen button animation */
+        .fullscreen-btn {
+            transition: all 0.3s ease;
+        }
+        .fullscreen-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Feature card hover effect */
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-apple-lightgray font-sans text-apple-black antialiased">
+    
+    <!-- Navigation Header -->
+    <header class="bg-apple-white/80 backdrop-blur-xl sticky top-0 z-50 border-b border-apple-border">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-14">
+                <a href="https://devoya.dev" class="text-xl font-semibold text-apple-black hover:text-apple-blue transition-colors">
+                    Devoya
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="#game" class="text-sm text-apple-gray hover:text-apple-black transition-colors">Play Now</a>
+                    <a href="#about" class="text-sm text-apple-gray hover:text-apple-black transition-colors">About</a>
+                    <a href="#features" class="text-sm text-apple-gray hover:text-apple-black transition-colors">Features</a>
+                    <a href="#controls" class="text-sm text-apple-gray hover:text-apple-black transition-colors">Controls</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-b from-apple-white to-apple-lightgray py-12 sm:py-16 lg:py-20">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-apple-black tracking-tight mb-4">
+                    Monster Survivors
+                </h1>
+                <p class="text-xl sm:text-2xl text-apple-gray max-w-3xl mx-auto mb-8">
+                    Survive endless waves of monsters in this action-packed roguelike adventure. How long can you last?
+                </p>
+                <a href="#game" class="inline-flex items-center px-8 py-3 bg-apple-blue text-white font-medium rounded-full hover:bg-apple-bluehover transition-colors fullscreen-btn">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                    </svg>
+                    Play Now — Free
+                </a>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section id="game" class="py-8 sm:py-12">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-apple-white rounded-2xl shadow-xl overflow-hidden">
+                    <!-- Game Header -->
+                    <div class="flex items-center justify-between px-4 sm:px-6 py-4 bg-apple-black">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-2">
+                                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                                <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                            </div>
+                            <span class="text-white text-sm font-medium hidden sm:inline">Monster Survivors</span>
+                        </div>
+                        <button onclick="toggleFullscreen()" class="flex items-center space-x-2 px-4 py-2 bg-apple-blue text-white text-sm font-medium rounded-lg hover:bg-apple-bluehover transition-colors fullscreen-btn">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+                            </svg>
+                            <span class="hidden sm:inline">Fullscreen</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Game iFrame Container -->
+                    <div id="game-wrapper" class="game-container">
+                        <iframe 
+                            id="game-frame"
+                            src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html"
+                            title="Play Monster Survivors Online - Free Survival Game"
+                            allowfullscreen
+                            loading="lazy"
+                            allow="autoplay; fullscreen; gamepad"
+                        ></iframe>
+                    </div>
+                </div>
+                
+                <!-- Quick Tips -->
+                <div class="mt-6 text-center">
+                    <p class="text-apple-gray text-sm">
+                        💡 Tip: Press <kbd class="px-2 py-1 bg-apple-white rounded text-xs font-mono">F</kbd> or click the button above for fullscreen mode
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 sm:py-16 bg-apple-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-apple-black text-center mb-8">
+                    About Monster Survivors
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="prose prose-lg text-apple-gray leading-relaxed space-y-6">
+                        <p>
+                            Monster Survivors is an exhilarating roguelike survival game that challenges you to fend off relentless hordes of monsters while growing stronger with each passing moment. Inspired by the wildly popular survival genre, this game combines fast-paced action with strategic depth, creating an experience that's easy to pick up but endlessly replayable.
+                        </p>
+                        <p>
+                            In Monster Survivors, your character automatically attacks nearby enemies, allowing you to focus on movement and positioning. As you defeat monsters, you'll collect experience gems that level you up and unlock powerful abilities. Choose your upgrades wisely — the right combination can turn you into an unstoppable force, while poor choices might leave you overwhelmed by the ever-growing monster swarm.
+                        </p>
+                        <p>
+                            The game features multiple playable characters, each with unique starting abilities and playstyles. Whether you prefer to keep enemies at bay with ranged attacks, wade into battle with devastating melee strikes, or support yourself with healing and defensive powers, there's a character that fits your preferred strategy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-12 sm:py-16 bg-apple-lightgray">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-apple-black text-center mb-12">
+                    Game Features
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-apple-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Auto-Attack Combat</h3>
+                        <p class="text-apple-gray text-sm">Focus on survival while your character automatically attacks nearby enemies. Strategic positioning is key to victory.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Level Up System</h3>
+                        <p class="text-apple-gray text-sm">Collect XP gems from fallen monsters to level up. Each level presents new upgrade choices to enhance your abilities.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Multiple Characters</h3>
+                        <p class="text-apple-gray text-sm">Unlock and play as different heroes, each with unique abilities and playstyles to master.</p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Endless Survival</h3>
+                        <p class="text-apple-gray text-sm">Test your skills against increasingly difficult waves of monsters. How long can you survive the onslaught?</p>
+                    </div>
+                    
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Power Combinations</h3>
+                        <p class="text-apple-gray text-sm">Combine different weapons and abilities to create devastating synergies and unique builds.</p>
+                    </div>
+                    
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-apple-white rounded-2xl p-6 shadow-sm">
+                        <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-apple-black mb-2">Play Anywhere</h3>
+                        <p class="text-apple-gray text-sm">No download required. Play instantly in your browser on desktop, tablet, or mobile devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section id="controls" class="py-12 sm:py-16 bg-apple-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-apple-black text-center mb-12">
+                    How to Play
+                </h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-apple-lightgray rounded-2xl p-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-apple-black rounded-lg flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-apple-black mb-1">Movement</h3>
+                                    <p class="text-apple-gray text-sm">Use <strong>WASD</strong> or <strong>Arrow Keys</strong> to move your character. On mobile, use the virtual joystick.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-apple-black rounded-lg flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-apple-black mb-1">Auto-Attack</h3>
+                                    <p class="text-apple-gray text-sm">Your character attacks automatically. Focus on positioning and dodging enemy attacks.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-apple-black rounded-lg flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-apple-black mb-1">Collect XP Gems</h3>
+                                    <p class="text-apple-gray text-sm">Defeat monsters to drop experience gems. Collect them to level up and unlock new abilities.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-10 h-10 bg-apple-black rounded-lg flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold">4</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-apple-black mb-1">Choose Upgrades</h3>
+                                    <p class="text-apple-gray text-sm">When you level up, select from three random upgrades. Build powerful synergies to maximize your survival.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-12 sm:py-16 bg-apple-lightgray">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-apple-black text-center mb-12">
+                    Frequently Asked Questions
+                </h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <details class="bg-apple-white rounded-xl p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="font-semibold text-apple-black">Is Monster Survivors free to play?</span>
+                            <svg class="w-5 h-5 text-apple-gray group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-apple-gray">Yes! Monster Survivors is completely free to play. No downloads, no registrations, no hidden fees. Just click play and start surviving.</p>
+                    </details>
+                    
+                    <details class="bg-apple-white rounded-xl p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="font-semibold text-apple-black">Can I play on my phone or tablet?</span>
+                            <svg class="w-5 h-5 text-apple-gray group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-apple-gray">Absolutely! Monster Survivors is fully optimized for mobile devices. The game features touch controls with a virtual joystick for easy navigation on touchscreens.</p>
+                    </details>
+                    
+                    <details class="bg-apple-white rounded-xl p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="font-semibold text-apple-black">How do I unlock new characters?</span>
+                            <svg class="w-5 h-5 text-apple-gray group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-apple-gray">New characters are unlocked by achieving specific milestones in the game, such as surviving for a certain amount of time, defeating a number of monsters, or reaching particular levels.</p>
+                    </details>
+                    
+                    <details class="bg-apple-white rounded-xl p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer list-none">
+                            <span class="font-semibold text-apple-black">Is my progress saved?</span>
+                            <svg class="w-5 h-5 text-apple-gray group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-apple-gray">The game saves your progress locally in your browser. Your unlocked characters and achievements will be preserved between sessions on the same device and browser.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 sm:py-20 bg-gradient-to-b from-apple-white to-apple-lightgray">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold text-apple-black mb-4">
+                    Ready to Survive?
+                </h2>
+                <p class="text-xl text-apple-gray mb-8 max-w-2xl mx-auto">
+                    Jump into the action now and see how long you can last against the monster horde!
+                </p>
+                <a href="#game" class="inline-flex items-center px-8 py-3 bg-apple-blue text-white font-medium rounded-full hover:bg-apple-bluehover transition-colors fullscreen-btn">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/>
+                    </svg>
+                    Play Monster Survivors Now
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-apple-black text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Devoya</h3>
+                    <p class="text-gray-400 text-sm">Your destination for free online games. Play instantly in your browser without downloads or installations.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#game" class="text-gray-400 hover:text-white transition-colors">Play Game</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#controls" class="text-gray-400 hover:text-white transition-colors">How to Play</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Devoya. All rights reserved. Monster Survivors is available for free online play.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen JavaScript -->
+    <script>
+        function toggleFullscreen() {
+            const gameWrapper = document.getElementById('game-wrapper');
+            
+            if (!document.fullscreenElement) {
+                if (gameWrapper.requestFullscreen) {
+                    gameWrapper.requestFullscreen();
+                } else if (gameWrapper.webkitRequestFullscreen) {
+                    gameWrapper.webkitRequestFullscreen();
+                } else if (gameWrapper.msRequestFullscreen) {
+                    gameWrapper.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Keyboard shortcut for fullscreen
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'f' || e.key === 'F') {
+                // Only trigger if not typing in an input
+                if (document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                    toggleFullscreen();
+                }
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
